@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'angular-localization-demo';
 
   constructor(public translate: TranslateService) {
-        this.translate.setDefaultLang('en');
-        this.translate.use('en');
+    const currentLanguage = this.translate.getBrowserLang();
+    this.translate.setDefaultLang(currentLanguage);
+    this.translate.use(currentLanguage);
   }
 }
